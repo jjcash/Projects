@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  sqlite3:
+    container_name: minimalistic_twitter
+    image: dev/sqlite3:latest
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./migrations/
+    ports:
+      - '9000:9000'
+    restart: unless-stopped
